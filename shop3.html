@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1f1f1f;
+            --secondary-color: #121212;
+            --accent-color: #151617;
+            --text-color: #ecf0f1;
+            --background-color: #000;
+            --placeholder-color: #95a5a6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: ltr;
+            text-align: left;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            padding: 80px 20px 20px 20px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq {
+            padding: 20px;
+        }
+
+        .faq h2 {
+            text-align: center;
+            color: var(--accent-color);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item h3 {
+            margin: 0;
+            cursor: pointer;
+            background-color: var(--secondary-color);
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+
+        .faq-item h3:hover {
+            background-color: var(--primary-color);
+        }
+
+        .faq-item p {
+            display: none;
+            padding: 10px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+        <nav>
+            <ul>
+                <li><a href="shop1.html">Home</a></li>
+                <li><a href="shop2.html">Products</a></li>
+                <li><a href="shop3.html">FAQ</a></li>
+                <li><a href="shop4.html">Login</a></li>
+                <li><a href="shop5.html">Sign Up</a></li>
+                <li><a href="shop6.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">How can I track my order?</h3>
+            <p>To track your order, log into your account and go to the "My Orders" section. There you can see the status of your order.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">What payment methods do you accept?</h3>
+            <p>We accept various payment methods including credit cards, debit cards, and online payments.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">How can I return a purchased product?</h3>
+            <p>To return a product, go to the "Returns" section in your account and submit a return request. Our support team will assist you with the process.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">Can I cancel my order?</h3>
+            <p>Yes, you can cancel your order before it is shipped. To cancel an order, go to the "My Orders" section in your account and select the cancel option.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">How long does it take for my order to arrive?</h3>
+            <p>Delivery time depends on your location. Usually, it takes between 3 to 7 business days for orders to arrive.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">Can I customize your templates?</h3>
+            <p>Yes, all our templates are customizable, and you can modify them according to your needs.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">Do you provide support for purchased templates?</h3>
+            <p>Yes, we provide support for all purchased templates. You can contact our support team via the "Contact Us" page.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

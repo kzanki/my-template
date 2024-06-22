@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1f1f1f;
+            --secondary-color: #121212;
+            --accent-color: #111010;
+            --text-color: #ecf0f1;
+            --background-color: #000;
+            --placeholder-color: #95a5a6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: ltr;
+            text-align: left;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            padding: 80px 20px 20px 20px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .product {
+            width: calc(33.333% - 40px);
+            background-color: var(--secondary-color);
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product p {
+            margin: 10px 0;
+        }
+
+        .product button {
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product button:hover {
+            background-color: #23201f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Products</h1>
+        <nav>
+            <ul>
+                <li><a href="shop1.html">Home</a></li>
+                <li><a href="shop2.html">Products</a></li>
+                <li><a href="shop3.html">FAQ</a></li>
+                <li><a href="shop4.html">Login</a></li>
+                <li><a href="shop5.html">Sign Up</a></li>
+                <li><a href="shop6.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="product-grid">
+            <div class="product">
+                <img src="1.jpg" alt="Product 1">
+                <p>Product 1</p>
+                <button onclick="addToCart('Product 1')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="2.avif" alt="Product 2">
+                <p>Product 2</p>
+                <button onclick="addToCart('Product 2')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="3.jpg" alt="Product 3">
+                <p>Product 3</p>
+                <button onclick="addToCart('Product 3')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="4.jpg" alt="Product 4">
+                <p>Product 4</p>
+                <button onclick="addToCart('Product 4')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="5.jpg" alt="Product 5">
+                <p>Product 5</p>
+                <button onclick="addToCart('Product 5')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="6.png" alt="Product 6">
+                <p>Product 6</p>
+                <button onclick="addToCart('Product 6')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="7.jpg" alt="Product 7">
+                <p>Product 7</p>
+                <button onclick="addToCart('Product 7')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="8.webp" alt="Product 8">
+                <p>Product 8</p>
+                <button onclick="addToCart('Product 8')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9.webp" alt="Product 9">
+                <p>Product 9</p>
+                <button onclick="addToCart('Product 9')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="10.webp" alt="Product 10">
+                <p>Product 10</p>
+                <button onclick="addToCart('Product 10')">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
+    <script>
+        function addToCart(product) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.push(product);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert(product + ' has been added to your cart.');
+        }
+    </script>
+</body>
+</html>

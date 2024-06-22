@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: ltr;
+            text-align: left;
+            background-color: #121212;
+            color: #ecf0f1;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            color: #ecf0f1;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        main {
+            padding: 80px 20px 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 160px);
+        }
+
+        .login-form {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-form h2 {
+            margin-top: 0;
+            color: #ecf0f1;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #232528;
+            border-radius: 5px;
+            background-color: #1b1d20;
+            color: #ecf0f1;
+        }
+
+        .login-form input::placeholder {
+            color: #95a5a6;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #221f1f;
+            color: #ecf0f1;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .login-form button:hover {
+            background-color: #272525;
+        }
+
+        .login-form p {
+            text-align: center;
+            color: #ecf0f1;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+        <nav>
+            <ul>
+                <li><a href="shop1.html">Home</a></li>
+                <li><a href="shop2.html">Products</a></li>
+                <li><a href="shop3.html">FAQ</a></li>
+                <li><a href="shop4.html">Login</a></li>
+                <li><a href="shop5.html">Sign Up</a></li>
+                <li><a href="shop6.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="shop5.html" style="color: #e74c3c;">Sign Up</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>All rights reserved.</p>
+    </footer>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'user' && password === 'password') {
+                localStorage.setItem('user', username);
+                alert('Login successful!');
+                window.location.href = 'shop1.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+    </script>
+</body>
+</html>
